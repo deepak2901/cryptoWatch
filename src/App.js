@@ -29,9 +29,9 @@ function App() {
 
         <Switch>
           <Route path="/login" component={LoginPage} isAuthenticated={false} restricted={true} />
-          <Route path="/register" component={Register} isAuthenticated={false} restricted={true} />
+          <Route path="/" component={Register} isAuthenticated={false} restricted={true} />
           <PublicRoute path="/coins/:id" component={CoinPage} isAuthenticated={true} />
-          <PublicRoute path="/" component={Homepage} isAuthenticated={true} />
+          <PublicRoute path="/homepage" component={Homepage} isAuthenticated={true} />
         </Switch>
 
       </CustomApp>
