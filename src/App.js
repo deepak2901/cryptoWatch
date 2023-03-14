@@ -28,8 +28,8 @@ function App() {
         {/* your private and public routes goes here */}
 
         <Switch>
-          <Route path="/login" component={LoginPage} isAuthenticated={false} restricted={true} />
-          <Route path="/" component={Register} isAuthenticated={false} restricted={true} />
+          <Route path="/" component={LoginPage} isAuthenticated={false} restricted={true} />
+          <Route path="/register" component={Register} isAuthenticated={false} restricted={true} />
           <PublicRoute path="/coins/:id" component={CoinPage} isAuthenticated={true} />
           <PublicRoute path="/homepage" component={Homepage} isAuthenticated={true} />
         </Switch>
