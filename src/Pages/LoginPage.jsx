@@ -15,6 +15,7 @@ const LoginPage = () => {
     // Check if user with the given email and password exists in the localStorage
     if (storedUser && storedUser.email === credentials.email && storedUser.password === credentials.password) {
       // If user exists, redirect to Home page
+      localStorage.setItem('isAuthenticated', 'true');
       history.push('/homepage');
     } else {
       // If user doesn't exist, show error message
@@ -27,7 +28,7 @@ const LoginPage = () => {
 
   }
   const handleChange = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setCredentials({...credentials ,[e.target.name]: e.target.value })
   }
 
@@ -51,4 +52,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default LoginPage;

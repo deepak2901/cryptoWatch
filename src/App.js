@@ -1,5 +1,5 @@
 import { styled } from "@mui/material";
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import PublicRoute from './components/PublicRoute';
@@ -27,11 +27,19 @@ function App() {
 
         {/* your private and public routes goes here */}
 
-        <Switch>
+        {/* <Switch>
           <Route path="/login" component={LoginPage} isAuthenticated={false} restricted={true} />
           <Route path="/" component={Register} isAuthenticated={false} restricted={true} />
-          <PublicRoute path="/coins/:id" component={CoinPage} isAuthenticated={true} />
           <PublicRoute path="/homepage" component={Homepage} isAuthenticated={true} />
+          <PublicRoute path="/coins/:id" component={CoinPage} isAuthenticated={true} />
+        </Switch> */}
+
+<Switch>
+          <PublicRoute path="/homepage" component={Homepage} isAuthenticated={true} />
+          <Route path="/login" component={LoginPage} restricted={true} />
+          <PublicRoute path="/coins/:id" component={CoinPage} isAuthenticated={true} />
+          <Route path="/" component={Register} restricted={true} />
+          <Redirect to="/" />
         </Switch>
 
       </CustomApp>
